@@ -1,5 +1,42 @@
 return {
   {
+    "stevearc/conform.nvim",
+    event = 'BufWritePre', -- uncomment for format on save
+    opts = require "configs.conform",
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require "configs.lspconfig"
+    end,
+  },
+
+  -- test new blink
+  -- { import = "nvchad.blink.lazyspec" },
+
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        ensure_installed = {
+          "css",
+          "html",
+          "javascript",
+          "json",
+          "lua",
+          "markdown",
+          "markdown_inline",
+          "toml",
+          "vim",
+          "vimdoc",
+          "xml",
+          "yaml",
+          "c_sharp",
+        },
+      },
+    },
+
+    {
     "folke/flash.nvim",
     event = "VeryLazy",
     ---@type Flash.Config
@@ -47,55 +84,8 @@ return {
       },
     },
   },
+
   { "nvim-tree/nvim-tree.lua", enabled = false },
-  {
-    "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
-    opts = require "configs.conform",
-  },
-
-  -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "css",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "toml",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-        "c_sharp",
-        "java",
-        "rust",
-      },
-    },
-  },
-
-  {
-    "mason-org/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "netcoredbg",
-      },
-    },
-  },
 
   {
     "chrisgrieser/nvim-spider",
@@ -104,6 +94,7 @@ return {
       require("spider").setup()
     end,
   },
+
   {
     "nvim-mini/mini.move",
     lazy = false,
@@ -112,6 +103,7 @@ return {
       require("mini.move").setup()
     end,
   },
+
   {
     "nvim-mini/mini.ai",
     lazy = false,
@@ -120,6 +112,7 @@ return {
       require("mini.ai").setup()
     end,
   },
+
   {
     "nvim-mini/mini.surround",
     lazy = false,
@@ -137,4 +130,5 @@ return {
       }
     end,
   },
+
 }
