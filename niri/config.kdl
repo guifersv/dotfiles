@@ -155,6 +155,7 @@ screenshot-path null    // Disable screenshot saving
 layout {
     gaps 16
     center-focused-column "never"
+    always-center-single-column
 
     preset-column-widths {
         proportion 0.33333
@@ -238,6 +239,15 @@ environment {
 
 hotkey-overlay {
     skip-at-startup
+}
+
+cursor {
+    xcursor-theme "macOS"
+    xcursor-size 24
+}
+
+overview {
+    backdrop-color "#191724"
 }
 
 // ────────────── Debug Options ──────────────
