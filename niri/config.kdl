@@ -24,7 +24,7 @@ input {
 binds {
     // ─── Applications ───
     MOD+Return    { spawn-sh "alacritty"; }
-    MOD+Space     { spawn-sh "wofi"; }
+    Mod+Space     repeat=false { spawn "vicinae" "toggle"; }
     MOD+B         { spawn-sh "firefox"; }
     MOD+Alt+L     { spawn-sh "swaylock"; }
     MOD+E         { spawn-sh "nautilus"; }
@@ -145,6 +145,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
+spawn-sh-at-startup "vicinae server"
 
 prefer-no-csd           // Disable program decorations
 screenshot-path null    // Disable screenshot saving
