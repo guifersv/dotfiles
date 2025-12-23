@@ -104,4 +104,6 @@ map({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>")
 map({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>")
 map({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")

@@ -6,3 +6,4 @@ local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 o.swapfile = false
 o.relativenumber = true
+o.wrap = false
