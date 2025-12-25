@@ -22,7 +22,7 @@ set $menu fuzzel
 
 
 ### Output configuration
-output * bg ~/Walls/a_house_with_a_bike_and_a_chair.jpg fill
+output * bg ~/Wallpapers/wall.png fill
 
 
 ### Input configuration
