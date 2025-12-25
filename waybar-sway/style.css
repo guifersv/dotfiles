@@ -2,71 +2,101 @@
 
 * {
   /* background-color: @background; */
-  color: @text;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 14px;
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font Propo";
+  font-size: 12px;
   font-weight: bold;
 }
 
 .modules-left * {
-  margin-left: 8px;
+  margin-left: 16px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 10px;
 }
 
 .modules-right * {
-  margin-right: 8px;
+  border-radius: 10px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-right: 16px;
 }
 
 #waybar {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 120px;
+  border-radius: 10px;
+  background: @base;
 }
 
 #workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: @surface;
+  padding: 0 10px;
+  transition: 0.2s ease-out;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-  background-color: @love;
-}
-
-#workspaces button.empty {
-  opacity: 0.5;
+  background-color: @green;
 }
 
 #workspaces button.urgent {
-  color: @gold;
+  color: @red;
 }
 
-#cpu,
-#memory,
-#battery,
-#clock,
-#pulseaudio,
+#cpu {
+  background-color: @black;
+}
+#memory {
+  background-color: @black;
+}
+#pulseaudio {
+  background-color: @black;
+}
+#clock {
+  background-color: @black;
+}
+#battery {
+  background-color: @black;
+}
+#network {
+  background-color: @black;
+}
+#bluetooth {
+  background-color: @black;
+}
+#custom-wlogout {
+  border: 1px solid @green;
+  padding: 0 10px;
+  background-color: @black;
+}
+#window {
+  padding-right: 16px;
+  background-color: @black;
+}
+window#waybar.empty #window {
+  background-color: transparent;
+}
 
 tooltip {
   padding: 2px;
+  background-color: @green;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.charging {
+  color: @green;
 }
 
 .hidden {
   opacity: 0;
-}
-
-#battery.critical {
-  color: @love;
-}
-
-#battery.warning {
-  color: @gold;
-}
-
-#battery.charging {
-  color: @iris;
 }

@@ -1,55 +1,84 @@
 {
-  "height": 20,
+  "reload_style_on_change": true,
+  "layer": "bottom",
+  "position": "top",
+  "spacing": 0,
+  "margin-left": 4,
+  "margin-right": 4,
+  "margin-top": 4,
   "modules-left": [
-      "pulseaudio",
-      "memory",
-      "cpu",
-  ],
-  "modules-center": [
-      "sway/workspaces",
+    "pulseaudio",
+    "memory",
+    "cpu"
   ],
   "modules-right": [
-      "clock",
-      "network",
-      "battery",
-      "bluetooth"
+    "clock",
+    "network",
+    "battery",
+    "bluetooth",
+    "custom/wlogout"
+  ],
+  "modules-center": [
+    "sway/workspaces"
   ],
   "sway/workspaces": {
+    "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
-      "1": "I",
-      "2": "II",
-      "3": "III",
-      "4": "IV",
-      "5": "V",
-      "6": "VI",
-      "7": "VII",
-      "8": "VIII",
-      "9": "IX",
-      "10": "X",
+      "default": ""
     },
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
-      "4": []
+      "4": [],
+      "5": []
     }
   },
   "clock": {
-      // "timezone": "America/New_York",
-    "format": "󰥔 {:%I:%M %p}",
-    "format-alt": "󰸗 {:%a %b %d}",
-    "tooltip-format": "<tt>{calendar}</tt>"
+    "format": "{:%H:%M - %d/%b}",
+    "tooltip": false
   },
   "cpu": {
-    "format": " {usage}%",
-    "tooltip": false,
-    "on-click": "alacritty --class float-alacritty -e btop"
+    "format": "󰍛 {usage}%",
+    "interval": 1,
+    "min-length": 5,
+    "format-alt-click": "click",
+    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
   },
   "memory": {
-    "interval": 1,
-    "format": " {}%",
-    "tooltip-format": "{used}/{total} GiB",
+    "interval": 10,
+    "format": "󰾆 {used:0.1f}G",
+    "format-alt": "󰾆 {percentage}%",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": " {volume}%",
+    "format-muted": " M",
+    "tooltip-format": "{desc}",
+    "on-click": "pavucontrol"
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 17
+  },
+  "custom/wlogout": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wlogout"
   },
   "battery": {
     "interval": 1,
@@ -61,29 +90,22 @@
     "format": " {capacity}%",
     "format-charging": "{capacity}%",
     "format-discharging": " {capacity}%",
-    "format-critical": " {capacity}% (Critical!!)",
+    "format-critical": " {capacity}%",
     "format-charging-warning": "{capacity}%",
     "format-charging-critical": "{capacity}%",
-    "format-discharging-critical": " {capacity}% (critical!!)",
+    "format-discharging-critical": " {capacity}%",
     "tooltip-format": "{time} remaining",
     "tooltip-format-charging": "{time} until full",
-    "tooltip-format-discharging": "{time} remaining",
+    "tooltip-format-discharging": "{time} remaining"
   },
   "network": {
-      // "interface": "wlp2*", // (Optional) To force the use of this interface
-      "format-wifi": " ({signalStrength}%)",
-      "format-ethernet": "모{ipaddr}/{cidr}",
-      "format-disconnected": "⚠ Disconnected",
-      "on-click": "alacritty --class float-alacritty -e nmtui"
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": " ({signalStrength}%)",
+    "format-ethernet": "모{ipaddr}/{cidr}",
+    "format-disconnected": "⚠ Disconnected",
+    "on-click": "alacritty --class float-alacritty -e nmtui"
   },
-  "pulseaudio": {
-      // "scroll-step": 1, // %, can be a float
-    "format": "  {volume}%",
-    "format-muted": " M",
-    "tooltip-format": "{desc}",
-    "on-click": "pavucontrol"
-  },
-    "bluetooth": {
+  "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     // "format-connected": " {device_alias}",
