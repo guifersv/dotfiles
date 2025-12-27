@@ -148,4 +148,6 @@ bar {
   swaybar_command waybar
 }
 
+for_window [app_id="float-alacritty"] floating enable, move position center
+
 include /etc/sway/config.d/*
