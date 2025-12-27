@@ -16,7 +16,7 @@
     "network",
     "battery",
     "bluetooth",
-    "custom/wlogout"
+    "custom/wleave"
   ],
   "modules-center": [
     "sway/workspaces"
@@ -75,10 +75,10 @@
     "icon-size": 12,
     "spacing": 17
   },
-  "custom/wlogout": {
+  "custom/wleave": {
     "format": "",
     "tooltip": false,
-    "on-click": "wlogout"
+    "on-click": "wleave"
   },
   "battery": {
     "interval": 1,

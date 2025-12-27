@@ -67,7 +67,7 @@
 #bluetooth {
   background-color: @black;
 }
-#custom-wlogout {
+#custom-wleave {
   border: 1px solid @green;
   padding: 0 10px;
   background-color: @black;
