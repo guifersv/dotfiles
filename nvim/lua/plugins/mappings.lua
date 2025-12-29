@@ -19,6 +19,10 @@ return {
           -- setting a mapping to false will disable it
           -- ["<esc>"] = false,
         },
+        i = {
+          ["jk"] = { "<Esc>", desc = "Exit insert mode" },
+          ["jj"] = { "<Esc>", desc = "Exit insert mode" },
+        },
       },
     },
   },
