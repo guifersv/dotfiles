@@ -1,12 +1,14 @@
 [general]
-import = ["~/.config/alacritty/themes/rose-pine.toml"]
+import = [
+  "~/.config/alacritty/dank-theme.toml"
+]
 
 [env]
 TERM = "xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1"
 
 [window]
-opacity = 0.8
+# opacity = 0.8
 # decorations = "None"
 padding = { x = 4, y = 4 }
 dynamic_padding = true
@@ -27,11 +29,11 @@ multiplier = 3
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 10
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
-bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
-italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+size = 11
+normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaCove Nerd Font", style = "Bold" }
+bold_italic = { family = "CaskaydiaCove Nerd Font", style = "Bold Italic" }
+italic = { family = "CaskaydiaCove Nerd Font", style = "Italic" }
 
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
@@ -46,81 +48,13 @@ save_to_clipboard = true
 # [mouse]
 # hide_when_typing = true
 
-[[mouse.bindings]]
-mouse = "Middle"
-action = "PasteSelection"
-
 [keyboard]
-[[keyboard.bindings]]
-key = "Paste"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "Copy"
-action = "Copy"
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Control"
-action = "ClearLogNotice"
-
-[[keyboard.bindings]]
-key = "L"
-mods = "Control"
-mode = "~Vi"
-chars = "\f"
-
-[[keyboard.bindings]]
-key = "PageUp"
-mods = "Shift"
-mode = "~Alt"
-action = "ScrollPageUp"
-
-[[keyboard.bindings]]
-key = "PageDown"
-mods = "Shift"
-mode = "~Alt"
-action = "ScrollPageDown"
-
-[[keyboard.bindings]]
-key = "Home"
-mods = "Shift"
-mode = "~Alt"
-action = "ScrollToTop"
-
-[[keyboard.bindings]]
-key = "End"
-mods = "Shift"
-mode = "~Alt"
-action = "ScrollToBottom"
-
-[[keyboard.bindings]]
-key = "V"
-mods = "Control|Shift"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control|Shift"
-action = "Copy"
-
-[[keyboard.bindings]]
-key = "F"
-mods = "Control|Shift"
-action = "SearchForward"
-
-[[keyboard.bindings]]
-key = "B"
-mods = "Control|Shift"
-action = "SearchBackward"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control|Shift"
-mode = "Vi"
-action = "ClearSelection"
-
-[[keyboard.bindings]]
-key = "Key0"
-mods = "Control"
-action = "ResetFontSize"
+bindings = [
+  { key = "C",       mods = "Control|Shift", action = "Copy"  },
+  { key = "V",       mods = "Control|Shift", action = "Paste" },
+  { key = "N",       mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "Equals",  mods = "Control|Shift", action = "IncreaseFontSize" },
+  { key = "Minus",   mods = "Control",       action = "DecreaseFontSize" },
+  { key = "Key0",    mods = "Control",       action = "ResetFontSize"    },
+  { key = "Enter",   mods = "Shift",         chars = "\n" },
+]
