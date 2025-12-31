@@ -14,6 +14,9 @@ return {
           ["<leader>mt"] = { "<cmd>Dotnet test<cr>", desc = "Dotnet test" },
           ["<leader>mb"] = { "<cmd>Dotnet build<cr>", desc = "Dotnet build" },
           ["<leader>mv"] = { "<cmd>Dotnet project view<cr>", desc = "Dotnet project view" },
+          ["<leader>ar"] = { "<cmd>Crun<cr>", desc = "Cargo run" },
+          ["<leader>ab"] = { "<cmd>Cbuild<cr>", desc = "Cargo build" },
+          ["<leader>at"] = { "<cmd>Ctest<cr>", desc = "Cargo test" },
         },
         t = {
           -- setting a mapping to false will disable it
