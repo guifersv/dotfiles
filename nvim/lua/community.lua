@@ -9,5 +9,6 @@ return {
   { import = "astrocommunity.motion.mini-ai" },
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.motion.mini-surround" },
+  { import = "astrocommunity.editing-support.neogen" },
   -- import/override with your plugins folder
 }
