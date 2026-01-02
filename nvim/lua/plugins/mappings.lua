@@ -25,6 +25,12 @@ return {
         i = {
           ["jk"] = { "<Esc>", desc = "Exit insert mode" },
           ["jj"] = { "<Esc>", desc = "Exit insert mode" },
+          ["<C-b>"] = { "<ESC>^i", desc = "move beginning of line" },
+          ["<C-e>"] = { "<End>", desc = "move end of line" },
+          ["<C-h>"] = { "<Left>", desc = "move left" },
+          ["<C-l>"] = { "<Right>", desc = "move right" },
+          ["<C-j>"] = { "<Down>", desc = "move down" },
+          ["<C-k>"] = { "<Up>", desc = "move up" },
         },
       },
     },
