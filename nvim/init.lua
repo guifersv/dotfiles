@@ -2,7 +2,8 @@ require("config.options")
 require("config.mappings")
 require("config.lazy")
 
-require'nvim-treesitter'.install { 'rust' }
+require 'nvim-treesitter'.install { 'rust', 'toml' }
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'rust' },
   callback = function()
