@@ -35,7 +35,6 @@ set('n', '<leader><tab>c', '<cmd>tabclose<cr>', { desc = 'Close Tab' })
 set('n', '<leader><tab>h', '<cmd>tabprevious<cr>', { desc = 'Previous Tab' })
 
 -- quickfix
-set('n', '<leader>lq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 set('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 set('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
@@ -92,11 +91,11 @@ set("n", "<leader>c", function()
   vim.cmd("bdelete #")
 end, { desc = "Close buffer and go next" })
 
-set( "n", "<S-l>", function()
+set("n", "<S-l>", function()
   require("bufferline.commands").cycle(vim.v.count1)
 end, { desc = "Next buffer" })
 
-set( "n", "<S-h>", function()
+set("n", "<S-h>", function()
   require("bufferline.commands").cycle(-vim.v.count1)
 end, { desc = "Previous buffer" })
 

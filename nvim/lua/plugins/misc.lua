@@ -38,39 +38,39 @@ return {
       { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
     }
   },
-  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons', config = true},
+  { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons', config = true },
   {
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
     keys = {
       {
-        "<leader>xx",
+        "<leader>lx",
         "<cmd>Trouble diagnostics toggle<cr>",
         desc = "Diagnostics (Trouble)",
       },
       {
-        "<leader>xX",
+        "<leader>lX",
         "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         desc = "Buffer Diagnostics (Trouble)",
       },
       {
-        "<leader>cs",
+        "<leader>ls",
         "<cmd>Trouble symbols toggle focus=false<cr>",
         desc = "Symbols (Trouble)",
       },
       {
-        "<leader>cl",
+        "<leader>ll",
         "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
         desc = "LSP Definitions / references / ... (Trouble)",
       },
       {
-        "<leader>xL",
+        "<leader>lL",
         "<cmd>Trouble loclist toggle<cr>",
         desc = "Location List (Trouble)",
       },
       {
-        "<leader>xQ",
+        "<leader>lQ",
         "<cmd>Trouble qflist toggle<cr>",
         desc = "Quickfix List (Trouble)",
       },
