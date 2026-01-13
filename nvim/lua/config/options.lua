@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 local opt = vim.opt
 
@@ -35,3 +35,5 @@ opt.splitbelow = true
 opt.splitright = true
 opt.splitkeep = 'screen'
 opt.winminwidth = 5
+
+vim.opt.foldlevel = 99
