@@ -23,6 +23,8 @@ set('n', '<C-Down>', '<cmd>resize -4<cr>', { desc = 'Decrease Window Height' })
 set('n', '<C-Left>', '<cmd>vertical resize -4<cr>', { desc = 'Decrease Window Width' })
 set('n', '<C-Right>', '<cmd>vertical resize +4<cr>', { desc = 'Increase Window Width' })
 
+set('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Close All' })
+
 -- tabs
 set('n', '<leader><tab>t', '<cmd>tablast<cr>', { desc = 'Last Tab' })
 set('n', '<leader><tab>o', '<cmd>tabonly<cr>', { desc = 'Close Other Tabs' })
@@ -59,3 +61,8 @@ set('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
 set('n', '[e', diagnostic_goto(false, 'ERROR'), { desc = 'Prev Error' })
 set('n', ']w', diagnostic_goto(true, 'WARN'), { desc = 'Next Warning' })
 set('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
+
+set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" })
+set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
+set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
