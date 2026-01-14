@@ -3,6 +3,14 @@ local set = vim.keymap.set
 set({ 'i', 'x', 'n', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save File' })
 set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 set('t', '<C-x>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+set("t", "<C-h>", [[<Cmd>wincmd h<CR>]])
+set("t", "<C-j>", [[<Cmd>wincmd j<CR>]])
+set("t", "<C-k>", [[<Cmd>wincmd k<CR>]])
+set("t", "<C-l>", [[<Cmd>wincmd l<CR>]])
+
+set('n', '<leader>tf', '<cmd>ToggleTerm direction=float<CR>')
+set('n', '<leader>th', '<cmd>ToggleTerm direction=horizontal<CR>')
+set('n', '<leader>tv', '<cmd>ToggleTerm direction=vertical<CR>')
 
 -- insert
 set('i', 'jk', '<Esc>')
