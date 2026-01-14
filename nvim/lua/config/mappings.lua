@@ -172,3 +172,7 @@ set("n", "<Leader>b|", function()
     vim.cmd("buffer " .. id)
   end)
 end, { desc = "Open buffer in vertical split (picker)" })
+
+set("n", "<leader>ar", "<cmd>Crun<CR>", { desc = "Cargo run" })
+set("n", "<leader>ab", "<cmd>Cbuild<CR>", { desc = "Cargo build" })
+set("n", "<leader>at", "<cmd>Ctest<CR>", { desc = "Cargo test" })

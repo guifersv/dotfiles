@@ -9,9 +9,6 @@ return {
     "nvim-telescope/telescope.nvim",
   },
   config = function()
-    ------------------------------------------------------------
-    -- LSP Attach (keymaps & features)
-    ------------------------------------------------------------
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
       callback = function(event)
@@ -42,25 +39,13 @@ return {
         end
       end,
     })
-
-    ------------------------------------------------------------
-    -- Diagnostics
-    ------------------------------------------------------------
     vim.diagnostic.config {
       severity_sort = true,
       float = { border = "rounded" },
       virtual_text = { spacing = 2, source = "if_many" },
       underline = true,
     }
-
-    ------------------------------------------------------------
-    -- Blink capabilities
-    ------------------------------------------------------------
     local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-    ------------------------------------------------------------
-    -- Servers
-    ------------------------------------------------------------
     local servers = {
       rust_analyzer = {
         settings = {
@@ -90,29 +75,15 @@ return {
       },
     }
 
-    ------------------------------------------------------------
-    -- Mason install
-    ------------------------------------------------------------
     require("mason-tool-installer").setup {
       ensure_installed = vim.tbl_keys(servers),
     }
-
-    ------------------------------------------------------------
-    -- LSP setup
-    ------------------------------------------------------------
     require("mason-lspconfig").setup {
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          server.capabilities = vim.tbl_deep_extend(
-            "force",
-            {},
-            capabilities,
-            server.capabilities or {}
-          )
-          require("lspconfig")[server_name].setup(server)
-        end,
-      },
+      automatic_enable = {
+        exclude = {
+          "rust_analyzer",
+        }
+      }
     }
   end,
 }
