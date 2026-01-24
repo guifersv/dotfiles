@@ -1,21 +1,23 @@
-### Colors
-set $bg_core        #1C261E
-set $bg_mantle      #2C3A30
-set $bg_surface     #3C4B3E
-set $fg_core        #DDF0E5
-set $fg_muted       #4B5F4F
-set $primary_green  #7FBB82
-set $vibrant_green  #34CB7D
-set $urgent_red     #E26E6E
-set $indicator      #F4E36B
+set $bg_core        #301828
+set $bg_mantle      #3E2636
+set $bg_surface     #523A4B
 
-# --- Window Borders & Title Bars ---
-# class                 border           background       text        indicator      child_border
-client.focused          $primary_green   $primary_green   $bg_core    $vibrant_green $primary_green
-client.focused_inactive $bg_surface      $bg_surface      $fg_core    $bg_surface    $bg_surface
-client.unfocused        $bg_mantle       $bg_mantle       $fg_muted   $bg_mantle     $bg_mantle
-client.urgent           $urgent_red      $urgent_red      $fg_core    $urgent_red    $urgent_red
-client.placeholder      $bg_core         $bg_core         $fg_core    $bg_core       $bg_core
+set $fg_core        #EDD5E7
+set $fg_muted       #816175
+
+set $primary_rose   #FF9090
+set $strong_rose    #FF8080
+set $secondary_green #7FBB82
+set $vibrant_green  #53D390
+
+set $urgent_red     #FFA0A0
+set $indicator      #F0E68C
+
+client.focused          $strong_rose $strong_rose $bg_core $indicator $strong_rose
+client.focused_inactive $bg_surface  $bg_surface  $fg_core $bg_surface $bg_surface
+client.unfocused        $bg_mantle   $bg_mantle   $fg_muted $bg_mantle  $bg_mantle
+client.urgent           $urgent_red  $urgent_red  $bg_core $urgent_red $urgent_red
+client.placeholder      $bg_core     $bg_core     $fg_core $bg_core    $bg_core
 
 client.background       $bg_core
 
@@ -30,13 +32,13 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
-set $browser firefox
+set $term foot
+set $files nautilus
+set $browser librewolf
 set $menu fuzzel
 
-
 ### Output configuration
-output * bg ~/Wallpapers/wall.png fill
+output * bg ~/wallpapers/b-254.jpg fill
 
 
 ### Input configuration
@@ -64,6 +66,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+w kill
 bindsym $mod+Space exec $menu
 bindsym $mod+b exec $browser
+bindsym $mod+e exec $files
 
 bindsym $mod+r reload
 
@@ -112,7 +115,7 @@ bindsym $mod+t floating toggle
 
 bindsym $mod+v layout stacking
 bindsym $mod+d layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+p layout toggle split
 
 bindsym $mod+Shift+d floating toggle
 bindsym $mod+o focus mode_toggle
@@ -145,9 +148,22 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Status Bar:
 bar {
-  swaybar_command waybar
-}
+    position bottom
 
-for_window [app_id="float-alacritty"] floating enable, move position center
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+    colors {
+        background          $bg_core
+        statusline          $fg_core
+        separator           $fg_muted
+        focused_workspace   $primary_rose $bg_surface $bg_core
+        active_workspace    $secondary_green $bg_surface $fg_core
+        inactive_workspace  $bg_mantle $bg_core $fg_muted
+        urgent_workspace    $urgent_red $bg_surface $bg_core
+        binding_mode        $indicator $bg_surface $bg_core
+    }
+}
 
 include /etc/sway/config.d/*

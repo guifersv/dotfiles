@@ -15,3 +15,4 @@ zstyle :compinstall filename '/home/guifersv/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+alias n="nvim"
