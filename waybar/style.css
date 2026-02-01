@@ -1,98 +1,60 @@
-@import "theme.css";
-
 * {
-  /* background-color: @background; */
-  all: unset;
-  font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 12px;
-  font-weight: bold;
+    font-size: 15px;
+    font-family: "CaskaydiaCove Nerd Font Propo";
 }
 
-.modules-left * {
-  margin-left: 16px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  border-radius: 10px;
+window#waybar {
+    all: unset;
 }
 
-.modules-right * {
-  border-radius: 10px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  margin-right: 16px;
+.modules-left {
+    padding: 7px;
+    margin: 10px 0 5px 10px;
+    border-radius: 10px;
+    background: rgba(43,36,59,0.7);
+    box-shadow: 0px 0px 4px rgba(32,28,43,0.6);
 }
 
-#waybar {
-  border-radius: 10px;
-  background: @base;
+.modules-right {
+    padding: 7px;
+    margin: 10px 10px 5px 0;
+    border-radius: 10px;
+    background: rgba(43,36,59,0.7);
+    box-shadow: 0px 0px 4px rgba(32,28,43,0.6);
+}
+
+#clock {
+    padding: 0px 5px;
+    color: rgba(230,224,248,1);
+}
+
+#pulseaudio {
+    padding: 0px 5px;
+    color: rgba(230,224,248,1);
+}
+
+#custom-wlogout {
+    padding: 0px 5px;
+    color: rgba(230,224,248,1);
+}
+
+#workspaces {
+    padding: 0px 5px;
 }
 
 #workspaces button {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right: 10px;
-  border-radius: 10px;
-  background-color: @dim_black;
-  padding: 0 10px;
-  transition: 0.2s ease-out;
+    all: unset;
+    padding: 0px 5px;
+    color: rgba(118,102,90,0.3);
+    transition: all 0.1s ease;
 }
 
-#workspaces button.active,
-#workspaces button.focused {
-  background-color: @magenta;
-  padding: 0 25px;
+#workspaces button.active {
+    color: rgba(194,142,255,1);
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
 
-#workspaces button.empty {
-  background-color: @black;
-}
-
-#workspaces button.urgent {
-  color: @red;
-}
-
-#cpu {
-  padding: 0 10px;
-  background-color: @black;
-}
-#memory {
-  padding: 0 10px;
-  background-color: @black;
-}
-#pulseaudio {
-  padding: 0 10px;
-  background-color: @black;
-}
-#clock {
-  padding: 0 10px;
-  background-color: @black;
-}
-#custom-wlogout {
-  border: 1px solid @magenta;
-  padding: 0 10px;
-  background-color: @black;
-}
-#custom-spotify {
-  padding: 0 10px;
-  background-color: @black;
-}
-#window {
-  padding-right: 16px;
-  background-color: @black;
-}
-window#waybar.empty #window {
-  background-color: transparent;
-}
-#power-profiles-daemon {
-  padding-left: 10px;
-  padding-right: 10px;
-  background-color: @black;
-}
-tooltip {
-  padding: 2px;
-  background-color: @magenta;
-}
-
-.hidden {
-  opacity: 0;
+#workspaces button.empty.active {
+    color: rgba(194,142,255,1);
+    text-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }

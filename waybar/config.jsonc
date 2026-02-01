@@ -1,63 +1,30 @@
 {
-  "reload_style_on_change": true,
-  "layer": "bottom",
+  "layer": "top",
   "position": "top",
-  "spacing": 0,
-  "margin-left": 4,
-  "margin-right": 4,
-  "margin-top": 4,
-  "modules-left": [
-    "pulseaudio",
-    "memory",
-    "cpu"
-  ],
-  "modules-right": [
-    "custom/spotify",
-    "clock",
-    "power-profiles-daemon",
-    "custom/wlogout"
-  ],
-  "modules-center": ["hyprland/workspaces"],
-  "hyprland/window": {
-    "format": "{}",
-    "max-length": 100,
-    "separate-outputs": true
-  },
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "default": ""
-    },
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
-    }
+  "modules-left": ["niri/workspaces"],
+  "modules-right": ["clock","pulseaudio","custom/wlogout"],
+
+  "niri/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+          "active": "",
+          "default": "",
+          "empty": ""
+      }
   },
   "clock": {
-    "format": "{:%H:%M - %d/%b}",
-    "tooltip": false
-  },
-  "cpu": {
-    "format": "󰍛 {usage}%",
-    "interval": 1,
-    "min-length": 5,
-    "format-alt-click": "click",
-    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
-    "format-icons": [
-      "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
-    ]
-  },
-  "memory": {
-    "interval": 10,
-    "format": "󰾆 {used:0.1f}G",
-    "format-alt": "󰾆 {percentage}%",
-    "format-alt-click": "click",
-    "tooltip": true,
-    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
+      "format": "{:%I:%M:%S %p} ",
+      "interval": 1,   
+      "tooltip-format": "<tt>{calendar}</tt>",
+      "calendar": {
+          "format": {
+              "today": "<span color='#fAfBfC'><b>{}</b></span>"
+          }
+      },
+      "actions": {
+          "on-click-right": "shift_down",
+          "on-click": "shift_up"
+      }
   },
   "pulseaudio": {
       // "scroll-step": 1, // %, can be a float
@@ -66,35 +33,9 @@
     "tooltip-format": "{desc}",
     "on-click": "pavucontrol"
   },
-  "tray": {
-    "icon-size": 12,
-    "spacing": 17
-  },
-
   "custom/wlogout": {
       "format": "",
       "tooltip": false,
       "on-click": "wlogout"
   },
-  "custom/spotify": {
-      "format": " {}",
-      "escape": true,
-      "return-type": "json",
-      "max-length": 40,
-      "on-click": "playerctl -p spotify play-pause",
-      "on-click-right": "killall spotify",
-      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder
-      "exec-if": "pgrep spotify"
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-  }
-}
-}
+} 
