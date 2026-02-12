@@ -1,0 +1,15 @@
+- widget: DefaultConfig
+- widget: Window
+  excludeAppIDs: ["foot"]
+  titlePrefix: "\uf2d0 "
+  ellipsis: "\u2026"
+- widget: SystemMonitor
+  format: "\uf4bc {cpu}% \uf2db {mem}% "
+  separator: false
+  separatorBlockWidth: 0
+- widget: Volume
+  icon: ""
+  muteIcon: ""
+- widget: DateTime
+  format: "\uf133 2006-01-02 \uf017 15:04"
+

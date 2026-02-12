@@ -1,89 +1,122 @@
-set $bg_core        #301828
-set $bg_mantle      #3E2636
-set $bg_surface     #523A4B
+############################
+# Variables
+############################
 
-set $fg_core        #EDD5E7
-set $fg_muted       #816175
+set $bg_core #301828
+set $bg_mantle #3E2636
+set $bg_surface #523A4B
 
-set $primary_rose   #FF9090
-set $strong_rose    #FF8080
+set $fg_core #EDD5E7
+set $fg_muted #816175
+
+set $primary_rose #FF9090
+set $strong_rose #FF8080
 set $secondary_green #7FBB82
-set $vibrant_green  #53D390
+set $vibrant_green #53D390
 
-set $urgent_red     #FFA0A0
-set $indicator      #F0E68C
+set $urgent_red #FFA0A0
+set $indicator #F0E68C
 
-client.focused          $strong_rose $strong_rose $bg_core $indicator $strong_rose
-client.focused_inactive $bg_surface  $bg_surface  $fg_core $bg_surface $bg_surface
-client.unfocused        $bg_mantle   $bg_mantle   $fg_muted $bg_mantle  $bg_mantle
-client.urgent           $urgent_red  $urgent_red  $bg_core $urgent_red $urgent_red
-client.placeholder      $bg_core     $bg_core     $fg_core $bg_core    $bg_core
-
-client.background       $bg_core
-
-default_border pixel 3
-titlebar_border_thickness 0
-font pango:CaskaydiaCove Nerd Font 9
-gaps inner 4
-
-### Variables
 set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
+
 set $term foot
-set $files nautilus
-set $browser librewolf
+set $files foot ranger
+set $browser chromium
 set $menu fuzzel
 
-### Output configuration
-output * bg ~/wallpapers/b-254.jpg fill
+############################
+# Appearance
+############################
 
+client.focused          $strong_rose $strong_rose $bg_core $indicator $strong_rose
+client.focused_inactive $bg_surface  $bg_surface  $fg_core $bg_surface $bg_surface
+client.unfocused        $bg_mantle   $bg_mantle   $fg_muted $bg_mantle $bg_mantle
+client.urgent           $urgent_red  $urgent_red  $bg_core $urgent_red $urgent_red
+client.placeholder      $bg_core     $bg_core     $fg_core $bg_core $bg_core
+client.background       $bg_core
 
-### Input configuration
+default_border pixel 2
+titlebar_border_thickness 0
+font pango:CaskaydiaCove Nerd Font 9
+gaps inner 4
+
+output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg center
+
+############################
+# Exec
+############################
+
+exec autotiling-rs
+
+############################
+# Input & Seat
+############################
+
 input type:keyboard {
-  xkb_layout "br"
-  xkb_options caps:none
-  xkb_numlock enabled
-  repeat_delay 650
-  repeat_rate 40
+    xkb_layout "br"
+    xkb_options caps:none
+    xkb_numlock enabled
+    xkb_capslock disabled
+    repeat_delay 650
+    repeat_rate 40
 }
 
-input type:touchpad {
-  accel_profile "flat"
-  click_method clickfinger
-  drag disabled
-  dwt enabled
-  tap enabled
-  natural_scroll disabled
-  middle_emulation enabled
+input type:pointer {
+    accel_profile "flat"
 }
 
+seat seat0 {
+    hide_cursor 1000
+    xcursor_theme Banana 24
+}
 
-### Key bindings
+############################
+# Keybindings - Applications
+############################
+
 bindsym $mod+Return exec $term
-bindsym $mod+w kill
-bindsym $mod+Space exec $menu
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
 bindsym $mod+b exec $browser
 bindsym $mod+e exec $files
 
-bindsym $mod+r reload
+bindsym $mod+Shift+p exec nwg-bar
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 floating_modifier $mod normal
 
-# Moving around:
+############################
+# Keybindings - Focus & Move
+############################
+
+bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
-bindsym $mod+$left focus left
 bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-# Workspaces:
+############################
+# Workspaces
+############################
+
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -95,7 +128,6 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
@@ -107,35 +139,58 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Layout stuff:
+############################
+# Layout
+############################
+
 bindsym $mod+s splith
 bindsym $mod+Shift+s splitv
+
+bindsym $mod+c layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
+
 bindsym $mod+f fullscreen
-bindsym $mod+t floating toggle
-
-bindsym $mod+v layout stacking
-bindsym $mod+d layout tabbed
-bindsym $mod+p layout toggle split
-
-bindsym $mod+Shift+d floating toggle
-bindsym $mod+o focus mode_toggle
+bindsym $mod+v floating toggle
+bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
-bindsym $mod+minus resize shrink width 40px
-bindsym $mod+equal resize grow width 40px
-bindsym $mod+plus resize grow height 40px
-bindsym $mod+underscore resize shrink height 40px
+############################
+# Scratchpad
+############################
 
-# Scratchpad:
-bindsym $mod+Shift+m move scratchpad
-bindsym $mod+m scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 
-# Utilitiesk
-bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+############################
+# Resize Mode
+############################
 
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+############################
+# Media & System Keys
+############################
+
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym --locked XF86AudioPlay exec playerctl play-pause
 bindsym --locked XF86AudioPrev exec playerctl previous
 bindsym --locked XF86AudioNext exec playerctl next
@@ -143,16 +198,16 @@ bindsym --locked XF86AudioNext exec playerctl next
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
-# Special key to take a screenshot with grim
-# bindsym Print exec grim
+bindsym Print exec grim - | wl-copy
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
-# Status Bar:
+############################
+# Bar
+############################
+
 bar {
     position bottom
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command statusbar
 
     colors {
         background          $bg_core
