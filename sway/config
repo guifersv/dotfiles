@@ -51,6 +51,11 @@ output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg cent
 ############################
 
 exec autotiling-rs
+exec_always swayidle -w \
+    timeout 480 '~/.config/sway/lock' \
+    timeout 540 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep '~/.config/sway/lock'
 
 ############################
 # Input & Seat
@@ -85,6 +90,7 @@ bindsym $mod+b exec $browser
 bindsym $mod+e exec $files
 
 bindsym $mod+Shift+p exec nwg-bar
+bindsym $mod+Shift+Control+p exec ~/.config/sway/lock
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'

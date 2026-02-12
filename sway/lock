@@ -1,0 +1,18 @@
+swaylock -f \
+    --ring-color 523A4BFF \
+    --ring-ver-color 53D390FF \
+    --ring-wrong-color FFA0A0FF \
+    --key-hl-color FF9090FF \
+    --line-color 00000000 \
+    --inside-color 30182888 \
+    --inside-ver-color 7FBB8288 \
+    --inside-wrong-color FFA0A088 \
+    --separator-color 00000000 \
+    --text-color EDD5E7FF \
+    --screenshots \
+    --clock \
+    --indicator \
+    --indicator-radius 100 \
+    --indicator-thickness 7 \
+    --effect-blur 7x5 \
+    --effect-vignette 0.5:0.5
