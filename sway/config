@@ -51,11 +51,6 @@ output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg cent
 ############################
 
 exec autotiling-rs
-exec_always swayidle -w \
-    timeout 480 '~/.config/sway/lock' \
-    timeout 540 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep '~/.config/sway/lock'
 
 ############################
 # Input & Seat
@@ -75,7 +70,6 @@ input type:pointer {
 }
 
 seat seat0 {
-    hide_cursor 1000
     xcursor_theme Banana 24
 }
 
