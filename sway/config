@@ -58,9 +58,8 @@ exec autotiling-rs
 
 input type:keyboard {
     xkb_layout "br"
-    xkb_options caps:none
+    xkb_options caps:backspace
     xkb_numlock enabled
-    xkb_capslock disabled
     repeat_delay 650
     repeat_rate 40
 }
