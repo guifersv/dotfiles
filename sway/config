@@ -82,6 +82,8 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+b exec $browser
 bindsym $mod+e exec $files
+bindsym $mod+n exec foot nvim
+bindsym $mod+m exec emacs
 
 bindsym $mod+Shift+p exec nwg-bar
 bindsym $mod+Shift+Control+p exec ~/.config/sway/lock
