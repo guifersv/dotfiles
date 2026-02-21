@@ -24,7 +24,7 @@ set $up k
 set $right l
 
 set $term foot
-set $files foot ranger
+set $files thunar
 set $browser chromium
 set $menu fuzzel
 
@@ -58,7 +58,7 @@ exec autotiling-rs
 
 input type:keyboard {
     xkb_layout "br"
-    xkb_options caps:backspace
+    xkb_options caps:escape
     xkb_numlock enabled
     repeat_delay 650
     repeat_rate 40
