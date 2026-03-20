@@ -16,6 +16,13 @@ export SUDO_EDITOR=nvim
 export VISUAL_EDITOR=nvim
 export TERM=foot
 
+alias n='nvim'
+alias t='tmux'
+alias md='mkdir -p'
+alias rd='rmdir'
+alias ..='cd ..'
+alias ...='cd ../..'
+
 alias ga='git add'
 alias gb='git branch'
 alias gd='git diff'
