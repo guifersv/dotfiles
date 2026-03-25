@@ -8,6 +8,16 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-media-driver
+    libva
+  ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -31,17 +41,14 @@
 
   services.libinput.enable = true;
 
-  programs.hyprland.enable = true;
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "Hyprland";
-        user = "guilherme";
-      };
-    };
-  };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.autoLogin.enable  = true;
+  services.displayManager.autoLogin.user = "guilherme";
+  services.gnome.core-apps.enable = false;
+  services.gnome.core-developer-tools.enable = false;
+  services.gnome.games.enable = false;
+  environment.gnome.excludePackages = with pkgs; [ gnome-tour gnome-user-docs ];
 
   users.users.guilherme = {
     isNormalUser = true;
@@ -58,14 +65,15 @@
     fd
     fzf
     ripgrep
+    fastfetch
 
     zig
+    gcc
 
     neovim
     foot
     zsh
     git
-    gcc
 
     nwg-look
     inter
@@ -74,6 +82,8 @@
     fira-code
     colloid-icon-theme
     apple-cursor
+
+    gnome-control-center
   ];
 
   fonts.packages = with pkgs; [
