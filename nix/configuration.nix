@@ -93,6 +93,7 @@
     gcc
 
     tree-sitter
+    gnumake
     curl
     wget
     fd
@@ -131,6 +132,7 @@
   ];
 
   programs.tmux.enable = true;
+
   programs.steam = {
     enable = true;
     extraCompatPackages = with pkgs; [
