@@ -94,6 +94,7 @@
 
     tree-sitter
     gnumake
+    wl-clipboard
     curl
     wget
     fd
