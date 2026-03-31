@@ -111,7 +111,6 @@
     pinentry-curses
 
     ungoogled-chromium
-    neovim
     nautilus
     foot
     pass
@@ -126,6 +125,11 @@
     gnome-control-center
     papers
     gnome-tweaks
+
+    neovim
+    zls
+    stylua
+    lua-language-server
   ];
 
   fonts.packages = with pkgs; [
