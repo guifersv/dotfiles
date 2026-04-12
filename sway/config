@@ -2,20 +2,17 @@
 # Variables
 ############################
 
-set $bg_core #301828
-set $bg_mantle #3E2636
-set $bg_surface #523A4B
-
-set $fg_core #EDD5E7
-set $fg_muted #816175
-
-set $primary_rose #FF9090
-set $strong_rose #FF8080
-set $secondary_green #7FBB82
-set $vibrant_green #53D390
-
-set $urgent_red #FFA0A0
-set $indicator #F0E68C
+set $bg_core     #e6dbb2
+set $bg_mantle   #e2d5a6
+set $bg_surface  #dbca8f
+set $fg_core     #354657
+set $fg_muted    #6f5d53
+set $primary_rose    #9b0303
+set $strong_rose     #a11010
+set $secondary_green #33592f
+set $vibrant_green   #1d4e16
+set $urgent_red      #a11010
+set $indicator       #125190
 
 set $mod Mod4
 set $left h
@@ -41,7 +38,7 @@ client.background       $bg_core
 
 default_border pixel 2
 titlebar_border_thickness 0
-font pango:CaskaydiaCove Nerd Font 9
+font pango:FantasqueSansM Nerd Font 9
 gaps inner 4
 
 output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg center
@@ -50,7 +47,7 @@ output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg cent
 # Exec
 ############################
 
-exec autotiling-rs
+# exec autotiling-rs
 
 ############################
 # Input & Seat
@@ -82,10 +79,9 @@ bindsym $mod+d exec $menu
 bindsym $mod+b exec $browser
 bindsym $mod+e exec $files
 bindsym $mod+n exec foot nvim
-bindsym $mod+m exec emacs
 
 bindsym $mod+Shift+p exec nwg-bar
-bindsym $mod+Shift+Control+p exec ~/.config/sway/lock
+# bindsym $mod+Shift+Control+p exec ~/.config/sway/lock
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -208,17 +204,17 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 bar {
     position bottom
-    status_command statusbar
 
     colors {
         background          $bg_core
         statusline          $fg_core
         separator           $fg_muted
-        focused_workspace   $primary_rose $bg_surface $bg_core
+
+        focused_workspace   $primary_rose    $bg_surface $bg_core
         active_workspace    $secondary_green $bg_surface $fg_core
-        inactive_workspace  $bg_mantle $bg_core $fg_muted
-        urgent_workspace    $urgent_red $bg_surface $bg_core
-        binding_mode        $indicator $bg_surface $bg_core
+        inactive_workspace  $bg_mantle       $bg_core    $fg_muted
+        urgent_workspace    $urgent_red      $bg_surface $bg_core
+        binding_mode        $indicator       $bg_surface $bg_core
     }
 }
 
