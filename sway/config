@@ -2,17 +2,13 @@
 # Variables
 ############################
 
-set $bg_core     #e6dbb2
-set $bg_mantle   #e2d5a6
-set $bg_surface  #dbca8f
-set $fg_core     #354657
-set $fg_muted    #6f5d53
-set $primary_rose    #9b0303
-set $strong_rose     #a11010
-set $secondary_green #33592f
-set $vibrant_green   #1d4e16
-set $urgent_red      #a11010
-set $indicator       #125190
+set $bg        #140400
+set $fg        #F7EAE5
+set $accent    #F0E68C
+set $muted     #5A3824
+set $urgent    #FF7979
+set $ok        #7FCF78
+set $info      #81C0FF
 
 set $mod Mod4
 set $left h
@@ -29,19 +25,19 @@ set $menu fuzzel
 # Appearance
 ############################
 
-client.focused          $strong_rose $strong_rose $bg_core $indicator $strong_rose
-client.focused_inactive $bg_surface  $bg_surface  $fg_core $bg_surface $bg_surface
-client.unfocused        $bg_mantle   $bg_mantle   $fg_muted $bg_mantle $bg_mantle
-client.urgent           $urgent_red  $urgent_red  $bg_core $urgent_red $urgent_red
-client.placeholder      $bg_core     $bg_core     $fg_core $bg_core $bg_core
-client.background       $bg_core
+client.focused          $accent $accent $bg $accent $accent
+client.focused_inactive $muted  $muted  $fg $muted  $muted
+client.unfocused        $bg     $bg     $fg $bg     $bg
+client.urgent           $urgent $urgent $bg $urgent $urgent
+client.placeholder      $bg     $bg     $fg $bg     $bg
+client.background       $bg
 
 default_border pixel 2
 titlebar_border_thickness 0
 font pango:FantasqueSansM Nerd Font 9
 gaps inner 4
 
-output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg center
+# output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg center
 
 ############################
 # Exec
@@ -65,9 +61,9 @@ input type:pointer {
     accel_profile "flat"
 }
 
-seat seat0 {
-    xcursor_theme Banana 24
-}
+# seat seat0 {
+#     xcursor_theme Banana 24
+# }
 
 ############################
 # Keybindings - Applications
@@ -203,18 +199,17 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 ############################
 
 bar {
-    position bottom
+    position top
 
     colors {
-        background          $bg_core
-        statusline          $fg_core
-        separator           $fg_muted
-
-        focused_workspace   $primary_rose    $bg_surface $bg_core
-        active_workspace    $secondary_green $bg_surface $fg_core
-        inactive_workspace  $bg_mantle       $bg_core    $fg_muted
-        urgent_workspace    $urgent_red      $bg_surface $bg_core
-        binding_mode        $indicator       $bg_surface $bg_core
+        background $bg
+        statusline $fg
+        separator  $muted
+        focused_workspace  $accent $accent $bg
+        active_workspace   $muted  $muted  $fg
+        inactive_workspace $bg     $bg     $fg
+        urgent_workspace   $urgent $urgent $bg
+        binding_mode       $info $info $bg
     }
 }
 
