@@ -1,0 +1,25 @@
+theme = "oasis_twilight"
+
+[editor]
+line-number = "relative"
+cursorline = true
+auto-completion = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-absolute-path"]
+right = ["diagnostics", "position", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[keys.normal]
+C-s = ":w"
+"A-x" = "@x<A-d>"
+
+[keys.insert]
+"A-x" = "normal_mode"
+j = { k = "normal_mode" }

@@ -1,0 +1,4 @@
+[[language]]
+name = "go"
+# indent = { tab-width = 2, unit = "  " }
+formatter = { command = "gofumpt" }
