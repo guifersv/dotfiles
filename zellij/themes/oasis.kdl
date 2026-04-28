@@ -1,0 +1,120 @@
+themes {
+    oasis_twilight_dark {
+        text_unselected {
+            base 240 228 242        // fg_core
+            background 38 26 48     // bg_core
+            emphasis_0 247 153 125  // theme_primary (peach)
+            emphasis_1 129 192 255  // info (blue)
+            emphasis_2 163 227 154  // ok (green)
+            emphasis_3 210 173 255  // theme_secondary (purple)
+        }
+        text_selected {
+            base 240 228 242        // fg_core
+            background 63 43 80     // bg_surface
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 163 227 154
+            emphasis_3 210 173 255
+        }
+        ribbon_selected {
+            base 32 23 38           // bg_shadow
+            background 163 227 154  // ok (green)
+            emphasis_0 255 160 160  // error
+            emphasis_1 247 153 125  // theme_primary
+            emphasis_2 210 173 255  // theme_secondary
+            emphasis_3 113 96 154   // fg_muted
+        }
+        ribbon_unselected {
+            base 32 23 38           // bg_shadow
+            background 240 228 242  // fg_core
+            emphasis_0 255 160 160  // error
+            emphasis_1 240 228 242  // fg_core
+            emphasis_2 113 96 154   // fg_muted
+            emphasis_3 210 173 255  // theme_secondary
+        }
+        table_title {
+            base 163 227 154        // ok (green)
+            background 38 26 48     // bg_core
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 163 227 154
+            emphasis_3 210 173 255
+        }
+        table_cell_selected {
+            base 240 228 242        // fg_core
+            background 63 43 80     // bg_surface
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 163 227 154
+            emphasis_3 210 173 255
+        }
+        table_cell_unselected {
+            base 240 228 242        // fg_core
+            background 38 26 48     // bg_core
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 163 227 154
+            emphasis_3 210 173 255
+        }
+        list_selected {
+            base 240 228 242
+            background 63 43 80
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 163 227 154
+            emphasis_3 210 173 255
+        }
+        list_unselected {
+            base 240 228 242
+            background 38 26 48
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 163 227 154
+            emphasis_3 210 173 255
+        }
+        frame_selected {
+            base 163 227 154        // ok (green)
+            background 38 26 48     // bg_core
+            emphasis_0 247 153 125
+            emphasis_1 129 192 255
+            emphasis_2 210 173 255
+            emphasis_3 32 23 38     // bg_shadow
+        }
+        frame_highlight {
+            base 247 153 125        // theme_primary (peach)
+            background 38 26 48     // bg_core
+            emphasis_0 210 173 255
+            emphasis_1 247 153 125
+            emphasis_2 247 153 125
+            emphasis_3 247 153 125
+        }
+        exit_code_success {
+            base 163 227 154        // ok (green)
+            background 38 26 48     // bg_core
+            emphasis_0 129 192 255  // info
+            emphasis_1 38 26 48     // bg_core
+            emphasis_2 210 173 255
+            emphasis_3 113 96 154   // fg_muted
+        }
+        exit_code_error {
+            base 255 160 160        // error (red)
+            background 38 26 48
+            emphasis_0 240 230 140  // theme_accent (yellow)
+            emphasis_1 0 0 0
+            emphasis_2 0 0 0
+            emphasis_3 0 0 0
+        }
+        multiplayer_user_colors {
+            player_1 210 173 255 // secondary
+            player_2 129 192 255 // info
+            player_3 104 192 182 // cyan
+            player_4 240 230 140 // yellow
+            player_5 247 153 125 // primary
+            player_6 163 227 154 // green
+            player_7 255 160 160 // error
+            player_8 198 149 255 // bright_magenta
+            player_9 135 206 235 // bright_blue
+            player_10 248 180 113 // bright_yellow
+        }
+    }
+}
