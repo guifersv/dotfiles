@@ -1,4 +1,4 @@
-# Theme: Oasis Luna Dark
+# Theme: Oasis Rose Dark
 # Ported from Oasis palettes
 
 "annotation"                      = { fg = "bright_yellow" }
@@ -136,23 +136,23 @@
 "variable.parameter"              = { fg = "bright_yellow",      modifiers = ["italic"] }
 
 [palette]
-bg_core = "#261A30"
-bg_mantle = "#312140"
-bg_shadow = "#201726"
-bg_surface = "#3F2B50"
-fg_core = "#F0E4F2"
-fg_strong = "#EAD8FF"
-fg_muted = "#71609A"
-fg_dim = "#76665A"
-theme_primary = "#F7997D"
-theme_secondary = "#D2ADFF"
-theme_accent = "#F0E68C"
+bg_core = "#301828"
+bg_mantle = "#3E2636"
+bg_shadow = "#2B1523"
+bg_surface = "#523A4B"
+fg_core = "#FADBE4"
+fg_strong = "#EBBEDF"
+fg_muted = "#816175"
+fg_dim = "#8A786C"
+theme_primary = "#DB9AB0"
+theme_secondary = "#93C795"
+theme_accent = "#8FD1C7"
 error = "#FFA0A0"
 warning = "#F0E68C"
 info = "#81C0FF"
 hint = "#8FD1C7"
 ok = "#A3E39A"
-black = "#261A30"
+black = "#301828"
 red = "#FF7979"
 green = "#7FCF78"
 yellow = "#F0E68C"
@@ -160,7 +160,7 @@ blue = "#81C0FF"
 magenta = "#C695FF"
 cyan = "#68C0B6"
 white = "#FFF7D7"
-bright_black = "#71609A"
+bright_black = "#816175"
 bright_red = "#FFA0A0"
 bright_green = "#A3E39A"
 bright_yellow = "#F8B471"
