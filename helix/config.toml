@@ -1,7 +1,7 @@
-theme = "oasis_twilight"
+theme = "oasis_starlight"
 
 [editor]
-line-number = "relative"
+# line-number = "relative"
 cursorline = true
 auto-completion = false
 

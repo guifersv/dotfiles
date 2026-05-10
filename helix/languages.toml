@@ -1,4 +1,8 @@
 [[language]]
 name = "go"
-# indent = { tab-width = 2, unit = "  " }
 formatter = { command = "gofumpt" }
+
+[[language]]
+name = "java"
+formatter = { command = "google-java-format", args = ["-"] }
+auto-format = true

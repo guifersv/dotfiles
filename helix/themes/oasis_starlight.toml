@@ -1,0 +1,170 @@
+# Theme: Oasis Rose Dark
+# Ported from Oasis palettes
+
+"annotation"                      = { fg = "bright_yellow" }
+
+"attribute"                       = { fg = "yellow",             modifiers = ["italic"] }
+
+"comment"                         = { fg = "fg_muted" }
+"comment.block"                   = { fg = "fg_muted" }
+"comment.block.documentation"     = { fg = "fg_muted" }
+"comment.line"                    = { fg = "fg_muted" }
+"comment.line.documentation"      = { fg = "fg_muted" }
+
+"constant"                        = { fg = "bright_yellow" }
+"constant.builtin"                = { fg = "bright_yellow" }
+"constant.builtin.boolean"        = { fg = "magenta" }
+"constant.character"              = { fg = "cyan" }
+"constant.character.escape"       = { fg = "bright_magenta" }
+"constant.macro"                  = { fg = "magenta" }
+"constant.numeric"                = { fg = "bright_yellow" }
+"constructor"                     = { fg = "yellow" }
+
+"definition"                      = { underline = { color = "cyan", style = "line" } }
+
+"diagnostic"                      = { underline = { color = "bright_yellow", style = "curl" } }
+"diagnostic.hint"                 = { underline = { color = "hint",   style = "curl" } }
+"diagnostic.warning"              = { underline = { color = "warning", style = "curl" } }
+"diagnostic.error"                = { underline = { color = "error",    style = "curl" } }
+"diagnostic.info"                 = { underline = { color = "info",   style = "curl" } }
+"diagnostic.unnecessary"          = { modifiers = ["dim"] }
+"diagnostic.deprecated"           = { modifiers = ["crossed_out"] }
+
+"error"                           = { fg = "error" }
+"hint"                            = { fg = "hint" }
+"info"                            = { fg = "info" }
+"warning"                         = { fg = "warning" }
+
+"diff.delta"                      = { fg = "bright_yellow" }
+"diff.minus"                      = { fg = "red" }
+"diff.plus"                       = { fg = "green" }
+
+"function"                        = { fg = "yellow" }
+"function.builtin"                = { fg = "cyan" }
+"function.call"                   = { fg = "yellow" }
+"function.macro"                  = { fg = "magenta" }
+"function.method"                 = { fg = "yellow" }
+
+"keyword"                         = { fg = "bright_magenta" }
+"keyword.control.conditional"     = { fg = "bright_magenta" }
+"keyword.control.exception"       = { fg = "bright_magenta" }
+"keyword.control.import"          = { fg = "bright_magenta" }
+"keyword.control.repeat"          = { fg = "bright_magenta" }
+"keyword.directive"               = { fg = "magenta" }
+"keyword.function"                = { fg = "bright_magenta" }
+"keyword.operator"                = { fg = "bright_magenta" }
+"keyword.return"                  = { fg = "bright_magenta" }
+"keyword.storage"                 = { fg = "bright_magenta" }
+"keyword.storage.modifier"        = { fg = "bright_magenta" }
+"keyword.storage.type"            = { fg = "magenta",             modifiers = ["italic"] }
+
+"label"                           = { fg = "cyan" }
+
+"markup.bold"                     = { fg = "bright_yellow",      modifiers = ["bold"] }
+"markup.heading"                  = { fg = "magenta",            modifiers = ["bold"] }
+"markup.italic"                   = { fg = "yellow",             modifiers = ["italic"] }
+"markup.link.text"                = { fg = "bright_magenta" }
+"markup.link.url"                 = { fg = "cyan" }
+"markup.list"                     = { fg = "cyan" }
+"markup.quote"                    = { fg = "yellow",             modifiers = ["italic"] }
+"markup.raw"                      = { fg = "fg_core" }
+"markup.strikethrough"            = { modifiers = ["crossed_out"] }
+
+"punctuation"                     = { fg = "fg_dim" }
+"punctuation.bracket"             = { fg = "fg_dim" }
+"punctuation.delimiter"           = { fg = "fg_dim" }
+"punctuation.special"             = { fg = "bright_magenta" }
+
+"special"                         = { fg = "bright_magenta" }
+
+"string"                          = { fg = "green" }
+"string.regexp"                   = { fg = "red" }
+"string.special"                  = { fg = "bright_yellow" }
+"string.symbol"                   = { fg = "green" }
+
+"tag"                             = { fg = "bright_magenta" }
+"tag.attribute"                   = { fg = "magenta" }
+"tag.delimiter"                   = { fg = "fg_core" }
+
+"type"                            = { fg = "cyan",               modifiers = ["italic"] }
+"type.builtin"                    = { fg = "cyan" }
+"type.enum.variant"               = { fg = "fg_core",            modifiers = ["italic"] }
+
+"ui.background"                   = { fg = "fg_core",            bg = "bg_core" }
+"ui.cursor"                       = { fg = "bg_core",            bg = "theme_primary" }
+"ui.cursor.insert"                = { fg = "bg_core",            bg = "green" }	
+"ui.cursor.match"                 = { fg = "fg_core",            bg = "bg_surface" }
+"ui.cursor.normal"                = { fg = "bg_core",            bg = "theme_primary" }	
+"ui.cursor.primary.insert"        = { fg = "bg_core",            bg = "green" }	
+"ui.cursor.primary.normal"        = { fg = "bg_core",            bg = "theme_primary" }	
+"ui.cursor.primary.select"        = { fg = "bg_core",            bg = "cyan" }
+"ui.cursor.select"                = { fg = "bg_core",            bg = "cyan" }
+"ui.cursorline.primary"           = { bg = "bg_shadow" }
+"ui.debug"                        = { fg = "red" }
+"ui.help"                         = { fg = "fg_core",            bg = "bg_shadow" }
+"ui.highlight.frameline"          = { fg = "bg_core",            bg = "red" }
+"ui.linenr"                       = { fg = "fg_dim" }
+"ui.linenr.selected"              = { fg = "fg_strong" }
+"ui.menu"                         = { fg = "fg_core",            bg = "bg_shadow" }
+"ui.menu.scroll"                  = { fg = "fg_core",            bg = "bg_shadow" }
+"ui.menu.selected"                = { fg = "bg_core",            bg = "bright_magenta" }
+"ui.popup"                        = { fg = "fg_core",            bg = "bg_shadow" }
+"ui.selection"                    = { bg = "bg_surface" }
+"ui.selection.primary"            = { bg = "bg_surface" }
+"ui.statusline"                   = { fg = "fg_core",            bg = "bg_shadow" }
+"ui.statusline.inactive"          = { fg = "fg_muted",           bg = "bg_shadow" }
+"ui.statusline.insert"            = { fg = "bg_core",            bg = "green",   modifiers = ["bold"] }
+"ui.statusline.normal"            = { fg = "bg_core",            bg = "yellow",  modifiers = ["bold"] }
+"ui.statusline.select"            = { fg = "bg_core",            bg = "cyan",    modifiers = ["bold"] }
+"ui.text"                         = { fg = "fg_core" }
+"ui.text.focus"                   = { fg = "cyan" }
+"ui.text.directory"               = { fg = "blue" }
+"ui.virtual.indent-guide"         = { fg = "bg_surface" }
+"ui.virtual.inlay-hint"           = { fg = "fg_dim" }
+"ui.virtual.inlay-hint.parameter" = { fg = "fg_muted",           modifiers = ["italic"] }
+"ui.virtual.inlay-hint.type"      = { fg = "fg_muted",           modifiers = ["italic"] }
+"ui.virtual.jump-label"           = { fg = "bright_magenta",     modifiers = ["bold"] }
+"ui.virtual.ruler"                = { bg = "bg_mantle" }
+"ui.virtual.whitespace"           = { fg = "bg_surface" }
+"ui.virtual.wrap"                 = { fg = "bg_surface" }
+"ui.window"                       = { fg = "bg_shadow" }
+
+"variable"                        = { fg = "fg_core" }
+"variable.builtin"                = { fg = "magenta",            modifiers = ["italic"] }
+"variable.other"                  = { fg = "fg_core" }
+"variable.other.member"           = { fg = "fg_core" }
+"variable.parameter"              = { fg = "bright_yellow",      modifiers = ["italic"] }
+
+[palette]
+bg_core = "#000000"
+bg_mantle = "#111216"
+bg_shadow = "#050505"
+bg_surface = "#1C2028"
+fg_core = "#FAF7F0"
+fg_strong = "#DCD9D2"
+fg_muted = "#4F5B6B"
+fg_dim = "#85665B"
+theme_primary = "#58B8FD"
+theme_secondary = "#F0E68C"
+theme_accent = "#FFA0A0"
+error = "#FFA0A0"
+warning = "#F0E68C"
+info = "#81C0FF"
+hint = "#8FD1C7"
+ok = "#A3E39A"
+black = "#000000"
+red = "#FF7979"
+green = "#7FCF78"
+yellow = "#F0E68C"
+blue = "#81C0FF"
+magenta = "#C695FF"
+cyan = "#68C0B6"
+white = "#FFF7D7"
+bright_black = "#4F5B6B"
+bright_red = "#FFA0A0"
+bright_green = "#A3E39A"
+bright_yellow = "#F8B471"
+bright_blue = "#87CEEB"
+bright_magenta = "#D2ADFF"
+bright_cyan = "#8FD1C7"
+bright_white = "#F7F4E9"

@@ -2,12 +2,12 @@
 # Variables
 ############################
 
-set $bg        #140400
-set $fg        #F7EAE5
-set $accent    #F0E68C
-set $muted     #5A3824
-set $urgent    #FF7979
-set $ok        #7FCF78
+set $bg        #000000
+set $fg        #FAF7F0
+set $muted     #4F5B6B
+set $primary   #58b8FD
+set $error     #FFA0A0
+set $ok        #A3E39A
 set $info      #81C0FF
 
 set $mod Mod4
@@ -18,26 +18,33 @@ set $right l
 
 set $term foot
 set $files thunar
-set $browser chromium
-set $menu fuzzel
+set $browser firefox
+set $menu wmenu-run \
+  -f "FantasqueSansM Nerd Font 12" \
+  -N 000000 \
+  -n FAF7F0 \
+  -M 000000 \
+  -m 81C0FF \
+  -S 58b8FD \
+  -s 000000
 
 ############################
 # Appearance
 ############################
 
-client.focused          $accent $accent $bg $accent $accent
-client.focused_inactive $muted  $muted  $fg $muted  $muted
-client.unfocused        $bg     $bg     $fg $bg     $bg
-client.urgent           $urgent $urgent $bg $urgent $urgent
-client.placeholder      $bg     $bg     $fg $bg     $bg
+client.focused          $primary  $primary    $bg       $primary    $primary
+client.focused_inactive $muted    $bg         $fg       $muted      $muted
+client.unfocused        $muted    $bg         $muted    $muted      $muted
+client.urgent           $error    $error      $bg       $error      $error
+client.placeholder      $muted    $bg         $fg       $muted      $muted
 client.background       $bg
 
-default_border pixel 2
-titlebar_border_thickness 0
+# default_border pixel 2
+# titlebar_border_thickness 0
 font pango:FantasqueSansM Nerd Font 9
 gaps inner 4
 
-# output * bg ~/wallpapers/a_lighthouse_with_a_large_cloud_of_pink_clouds.jpg center
+output * bg ~/pics/literal-wallpaper.png center
 
 ############################
 # Exec
@@ -55,15 +62,19 @@ input type:keyboard {
     xkb_numlock enabled
     repeat_delay 650
     repeat_rate 40
+    xkb_numlock enabled
 }
 
-input type:pointer {
+input type:touchpad {
     accel_profile "flat"
+    dwt enabled
+    natural_scroll enabled
+    tap enabled
 }
 
-# seat seat0 {
-#     xcursor_theme Banana 24
-# }
+seat seat0 {
+    xcursor_theme macOS 24
+}
 
 ############################
 # Keybindings - Applications
@@ -74,9 +85,8 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+b exec $browser
 bindsym $mod+e exec $files
-bindsym $mod+n exec foot nvim
 
-bindsym $mod+Shift+p exec nwg-bar
+# bindsym $mod+Shift+p exec nwg-bar
 # bindsym $mod+Shift+Control+p exec ~/.config/sway/lock
 
 bindsym $mod+Shift+c reload
@@ -92,19 +102,11 @@ bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 ############################
 # Workspaces
@@ -145,6 +147,7 @@ bindsym $mod+t layout toggle split
 
 bindsym $mod+f fullscreen
 bindsym $mod+v floating toggle
+bindsym $mod+Shift+v sticky toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
@@ -160,15 +163,15 @@ bindsym $mod+minus scratchpad show
 ############################
 
 mode "resize" {
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 20px
+    bindsym $down resize grow height 20px
+    bindsym $up resize shrink height 20px
+    bindsym $right resize grow width 20px
 
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 40px
+    bindsym Down resize grow height 40px
+    bindsym Up resize shrink height 40px
+    bindsym Right resize grow width 40px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -200,16 +203,17 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 bar {
     position top
+    status_command i3status-rs
 
     colors {
         background $bg
         statusline $fg
         separator  $muted
-        focused_workspace  $accent $accent $bg
-        active_workspace   $muted  $muted  $fg
-        inactive_workspace $bg     $bg     $fg
-        urgent_workspace   $urgent $urgent $bg
-        binding_mode       $info $info $bg
+
+        focused_workspace  $primary $primary $bg
+        active_workspace   $bg $bg $fg
+        inactive_workspace $bg $bg $muted
+        urgent_workspace   $error $error $bg
     }
 }
 
