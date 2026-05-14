@@ -1,9 +1,12 @@
-theme = "oasis_starlight"
+theme = "oasis_luna"
 
 [editor]
-# line-number = "relative"
+line-number = "relative"
 cursorline = true
 auto-completion = false
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 left = ["mode", "spinner"]
@@ -17,6 +20,8 @@ diagnostics = ["warning", "error"]
 workspace-diagnostics = ["warning", "error"]
 
 [keys.normal]
+S-l = ":buffer-next"
+S-h = ":buffer-previous"
 C-s = ":w"
 "A-x" = "@x<A-d>"
 

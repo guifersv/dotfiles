@@ -136,10 +136,10 @@
 "variable.parameter"              = { fg = "bright_yellow",      modifiers = ["italic"] }
 
 [palette]
-bg_core = "#101032"
-bg_mantle = "#1A1646"
-bg_shadow = "#0C0A2A"
-bg_surface = "#241F56"
+bg_core = "#0D0D2B"
+bg_mantle = "#17143E"
+bg_shadow = "#0A0A1F"
+bg_surface = "#211D4E"
 fg_core = "#EEEAFE"
 fg_strong = "#DCD5FF"
 fg_muted = "#8A82B3"
@@ -152,7 +152,7 @@ warning = "#F0E68C"
 info = "#81C0FF"
 hint = "#8FD1C7"
 ok = "#A3E39A"
-black = "#101032"
+black = "#0D0D2B"
 red = "#FF7979"
 green = "#7FCF78"
 yellow = "#F0E68C"
