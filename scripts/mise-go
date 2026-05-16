@@ -1,0 +1,8 @@
+cat > mise.toml <<'EOF'
+[tools]
+go = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+gofumpt = "latest"
+EOF
+
+mise trust
