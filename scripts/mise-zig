@@ -1,0 +1,7 @@
+cat > mise.toml <<'EOF'
+[tools]
+zig = "0.15.2"
+zls = "0.15.1"
+EOF
+
+mise trust
