@@ -1,9 +1,8 @@
-# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-export EDITOR=hx
-export VISUAL_EDITOR=hx
-export SUDO_EDITOR=hx
+export EDITOR=nvim
+export VISUAL_EDITOR=nvim
+export SUDO_EDITOR=nvim
 
 export PATH=$PATH:~/scripts
 
@@ -110,3 +109,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias di="sudo dnf install"
+alias dr="sudo dnf remove"
