@@ -1,0 +1,11 @@
+cat > mise.toml <<'EOF'
+[tools]
+go = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"aqua:go-delve/delve" = "latest"
+gofumpt = "latest"
+sqlc = "latest"
+"go:github.com/pressly/goose/v3/cmd/goose" = "latest"
+EOF
+
+mise trust
