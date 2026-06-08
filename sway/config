@@ -18,9 +18,10 @@ set $right l
 
 set $term foot
 set $files thunar
-set $browser firefox
+set $editor emacs
+set $browser chromium
 set $menu wmenu-run \
-  -f "FantasqueSansM Nerd Font 12" \
+  -f "CaskaydiaCove Nerd Font 10" \
   -N 000000 \
   -n FAF7F0 \
   -M 000000 \
@@ -41,16 +42,19 @@ client.background       $bg
 
 # default_border pixel 2
 # titlebar_border_thickness 0
-font pango:FantasqueSansM Nerd Font 9
+font pango:CaskaydiaCove Nerd Font 9
 gaps inner 4
 
-output * bg ~/pics/literal-wallpaper.png center
+# output * bg ~/pics/literal-wallpaper.png center
 
 ############################
 # Exec
 ############################
 
-# exec autotiling-rs
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
 
 ############################
 # Input & Seat
@@ -72,9 +76,9 @@ input type:touchpad {
     tap enabled
 }
 
-seat seat0 {
-    xcursor_theme macOS 24
-}
+# seat seat0 {
+#     xcursor_theme macOS 24
+# }
 
 ############################
 # Keybindings - Applications
@@ -85,12 +89,13 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+b exec $browser
 bindsym $mod+e exec $files
+bindsym $mod+m exec $editor
 
 # bindsym $mod+Shift+p exec nwg-bar
 # bindsym $mod+Shift+Control+p exec ~/.config/sway/lock
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 floating_modifier $mod normal
 
