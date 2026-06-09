@@ -1,3 +1,17 @@
+icons_format = "{icon}"
+
+[icons]
+icons = "material-nf"
+
+[theme]
+theme = "srcery"
+[theme.overrides]
+idle_bg = "#4E3747"
+warning_bg = "#4E3747"
+critical_bg = "#4E3747"
+info_bg = "#4E3747"
+good_bg = "#4E3747"
+
 [[block]]
 block = "battery"
 

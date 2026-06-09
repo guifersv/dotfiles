@@ -1,0 +1,26 @@
+swaylock \
+  --show-failed-attempts \
+  --indicator-caps-lock \
+  --color 2C1724 \
+  --inside-color 2C1724dd \
+  --ring-color E6A4BEff \
+  --line-color 816175ff \
+  --separator-color 816175ff \
+  --text-color FADBE4ff \
+  --key-hl-color 81C0FFff \
+  --bs-hl-color FFA0A0ff \
+  --inside-ver-color 2C1724dd \
+  --ring-ver-color A3E39Aff \
+  --text-ver-color A3E39Aff \
+  --line-ver-color A3E39Aff \
+  --inside-wrong-color 2C1724dd \
+  --ring-wrong-color FFA0A0ff \
+  --text-wrong-color FFA0A0ff \
+  --line-wrong-color FFA0A0ff \
+  --inside-caps-lock-color 2C1724dd \
+  --ring-caps-lock-color 81C0FFff \
+  --text-caps-lock-color 81C0FFff \
+  --line-caps-lock-color 81C0FFff \
+  --font "CaskaydiaCove NerdFont" \
+  --indicator-radius 90 \
+  --indicator-thickness 8
