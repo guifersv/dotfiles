@@ -21,6 +21,6 @@ swaylock \
   --ring-caps-lock-color 81C0FFff \
   --text-caps-lock-color 81C0FFff \
   --line-caps-lock-color 81C0FFff \
-  --font "CaskaydiaCove NerdFont" \
+  --font "CaskaydiaCove Nerd Font" \
   --indicator-radius 90 \
   --indicator-thickness 8

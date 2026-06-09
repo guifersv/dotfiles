@@ -92,10 +92,10 @@
 
   services.playerctld.enable = true;
 
-  services.emacs = {
-    enable = true;
-    defaultEditor = true;
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
   
   services.gnome.gnome-keyring.enable = true;
 
@@ -126,7 +126,6 @@
       update = "sudo nixos-rebuild switch";
       nixg = "sudo nix-collect-garbage -d";
       nixedit = "sudo -e /etc/nixos/configuration.nix";
-      e = "emacsclient -c";
     };
   };
 
